@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ServicioCustomers from './components/ServicioCustomers';
+import Global from './components/Global';
+import BuscadorCustomer from './components/BuscadorCustomer';
+import Coches from './components/Coches';
+import DepartamentosEmpleados from './components/DepartamentosEmpleados';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <div className="App">
+      {/* <ServicioCustomers />
+      <BuscadorCustomer />
+      <Coches /> */}
+      <DepartamentosEmpleados />
+    </div>
   </React.StrictMode>
 );
 
