@@ -8,6 +8,7 @@ import Global from './components/Global';
 import BuscadorCustomer from './components/BuscadorCustomer';
 import Coches from './components/Coches';
 import DepartamentosEmpleados from './components/DepartamentosEmpleados';
+import Coches2 from './components/Coches2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,8 +16,8 @@ root.render(
     <div className="App">
       {/* <ServicioCustomers />
       <BuscadorCustomer />
-      <Coches /> */}
-      <DepartamentosEmpleados />
+      <DepartamentosEmpleados />*/}
+      <Coches2 />
     </div>
   </React.StrictMode>
 );
