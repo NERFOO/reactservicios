@@ -16,8 +16,8 @@ root.render(
     <div className="App">
       {/* <ServicioCustomers />
       <BuscadorCustomer />
-      <DepartamentosEmpleados />*/}
-      <Coches2 />
+      <Coches2 />*/}
+      <DepartamentosEmpleados />
     </div>
   </React.StrictMode>
 );

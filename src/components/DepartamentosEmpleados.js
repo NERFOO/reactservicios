@@ -7,7 +7,8 @@ export default class DepartamentosEmpleados extends Component {
     state = {
         departamentos: [] ,
         empleados: [] ,
-        status: false
+        departamentoStatus: false ,
+        empleadosStatus : false
     }
 
     departamentosSelect = () => {
@@ -16,7 +17,7 @@ export default class DepartamentosEmpleados extends Component {
         axios.get(url).then(res => {
             this.setState({
                 departamentos: res.data ,
-                status: true
+                departamentoStatus: true
             })
         });
     }
@@ -28,13 +29,14 @@ export default class DepartamentosEmpleados extends Component {
     mostrarEmpleados = (e) => {
         e.preventDefault();
 
-        var id = parseInt(this.select.current.value);
+        var id = this.select.current.value;
         var request = "/api/Empleados/EmpleadosDepartamento/" + id;
         var url = Global.urlEmpleados + request;
 
         axios.get(url).then(res => {
             this.setState({
-                empleados: res.data
+                empleados: res.data ,
+                empleadosStatus : true
             });
         });
     }
@@ -46,7 +48,7 @@ export default class DepartamentosEmpleados extends Component {
                 <label>Departamentos</label>
                 <select ref={this.select}>
                     {
-                        this.state.status == true &&
+                        this.state.departamentoStatus == true &&
                         (
                             this.state.departamentos.map((dept, index) => {
                                 return (<option key={index} value={dept.Numero}>{dept.Nombre}</option>)
@@ -58,9 +60,10 @@ export default class DepartamentosEmpleados extends Component {
 
                 <ul>
                     {
-                        this.state.empleados.map((empleado, index) => {
+                        this.state.empleadosStatus == true &&
+                        (this.state.empleados.map((empleado, index) => {
                             return(<li key={index}>{empleado.apellido}</li>)
-                        })
+                        }))
                     }
                 </ul>
             </form>
