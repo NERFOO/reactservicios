@@ -44,7 +44,7 @@ export default class DepartamentosEmpleados extends Component {
     render() {
         return (<div>
             <h1>DepartamentosEmpleados</h1>
-            <form onSubmit={this.mostrarEmpleados}>
+            <form>
                 <label>Departamentos</label>
                 <select ref={this.select}>
                     {
