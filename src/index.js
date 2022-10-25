@@ -1,7 +1,13 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import React from 'react';
+import $ from 'jquery';
+import Popper from 'popper.js';
+import "bootstrap/dist/js/bootstrap.bundle";
+
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+
 import reportWebVitals from './reportWebVitals';
 import ServicioCustomers from './components/ServicioCustomers';
 import Global from './components/Global';
@@ -26,8 +32,8 @@ root.render(
       <MaestroDepartamentos />
       <PageNotFound />
       <TablaMultiplicar numero="5"/>
-      <TablaMultiplicar numero="11"/>*/}
-      <MenuRutas />
+      <TablaMultiplicar numero="11"/>
+      <MenuRutas />*/}
       <Router/>
     </div>
   //</React.StrictMode>

@@ -24,16 +24,25 @@ export default class TablaMultiplicar extends Component {
     componentDidMount = () => {
         this.generarTabla();
     }
-
+    componentDidUpdate = (oldProps) => {
+        if(oldProps.numero != this.props.numero) {
+            this.generarTabla();
+        }
+    }
 
     render() {
         return (<div>
-            <h1>Tabla Multiplicar {this.props.numero}</h1>
-            {
-                this.state.tabla.map((num, index) => {
-                    return (<h2 key={index}>{this.props.numero} * {index+1} = {num}</h2>)
-                })
-            }
+            <table className='table table-dark'>
+                <tbody>
+                    {
+                        this.state.tabla.map((num, index) => {
+                            return (<tr key={index}>
+                                <td>{this.props.numero} * {index+1} = {num}</td>
+                            </tr>)
+                        })
+                    }
+                </tbody>
+            </table>
         </div>)
     }
 }
