@@ -35,7 +35,7 @@ export default class Coches2 extends Component {
         var valor = this.input.current.value.toUpperCase();
         var coche = this.state.datos;
         var filtro = [];
-        for(var i = 0; i < this.state.datos.length; i++) {
+        for(var i = 0; i < coche.length; i++) {
             if(coche[i].marca.toUpperCase() == valor) {
                 filtro.push(coche[i])
             }
